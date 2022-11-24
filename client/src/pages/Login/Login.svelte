@@ -1,8 +1,9 @@
 <script>
   import Footer from "../../components/Footer/Footer.svelte";
-  import Form from "../../components/Form/Form.svelte";
+
   import { Router, Link, Route } from "svelte-navigator";
   import SignUp from "../SignUp/SignUp.svelte";
+  import LoginForm from "../../components/LoginForm/LoginForm.svelte";
 </script>
 
 <div class="row rounded">
@@ -21,7 +22,7 @@
       <div
         class="container col-sm-4 border-secondary contentContainer p-4 rounded"
       >
-        <Form />
+        <LoginForm />
         <div>
           <Link to="/signup">Ny bruger?</Link>
           <Link to="/forgot-password">Glemt password?</Link>

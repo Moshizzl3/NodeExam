@@ -17,7 +17,8 @@ router.post("/api/users", async (req, res) => {
   const user = { ...req.body };
   const saltRounds = 12;
   user.password = await bcrypt.hash(user.password, saltRounds);
-  await db.execute("INSERT INTO users(mail, password, role_id) VALUES(?,?,?)", [
+  await db.execute("INSERT INTO users(name, mail, password, role_id) VALUES(?,?,?,?)", [
+    user.name,
     user.mail,
     user.password,
     2,

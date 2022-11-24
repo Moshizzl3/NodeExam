@@ -10,7 +10,7 @@
   const cookie = document.cookie;
 </script>
 
-<main class="container mainContainer">
+<main class="container mainContainer h-100">
   <Router>
     {#if !cookie}
       <div>
