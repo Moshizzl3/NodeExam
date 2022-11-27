@@ -1,5 +1,4 @@
-# Node Mandatory 2
-To run the project:
+# Node Mandatory 2 - To run the project:
 
 ## Server:
 Add your mysql databse credenticals in the "connection_mysql.js" file.
