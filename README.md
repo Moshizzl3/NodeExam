@@ -5,12 +5,14 @@ To run the project:
 Add your mysql databse credenticals in the "connection_mysql.js" file.
 After credentials are filled, take following steps:
 1. Navigate to /server
-2. in terminal run: npm run setup-db
-3. in terminal run: npm run start-dev
+2. in terminal run: npm i
+3. in terminal run: npm run setup-db
+4. in terminal run: npm run start-dev
 
 ## Client:
 1. navigate to /client
-2. in terminal run: npm run dev
+2. in terminal run: npm i
+3. in terminal run: npm run dev
 
 ## To test the application:
 
