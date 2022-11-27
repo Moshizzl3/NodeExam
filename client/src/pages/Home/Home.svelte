@@ -14,7 +14,7 @@
   <div>
     <div class="container">
       <Button id="logoutButton" clickFunc={click} backgroundColor="green">
-        Log out
+        Log ud
       </Button>
     </div>
   </div>

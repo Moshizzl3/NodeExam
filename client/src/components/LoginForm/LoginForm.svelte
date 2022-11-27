@@ -43,7 +43,7 @@
   <div class="form-outline mb-4">
     <Input
       name="password"
-      type="text"
+      type="password"
       placeholder="Indtast password"
       bind:value={password}
     />

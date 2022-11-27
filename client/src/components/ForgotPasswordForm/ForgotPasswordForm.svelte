@@ -67,7 +67,7 @@
       <div class="row">
         <Input
           name="password"
-          type="text"
+          type="password"
           placeholder="Indtast nyt password"
           bind:value={password}
         />

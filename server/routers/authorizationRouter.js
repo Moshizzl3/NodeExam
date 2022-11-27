@@ -32,7 +32,6 @@ function authenticateToken(req, res, next) {
   if (token == null) return res.sendStatus(401);
   jwt.verify(token, process.env.ACCES_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
-    console.log(user);
     req.user = user;
     next();
   });
@@ -44,7 +43,6 @@ function authenticateMailToken(req, res, next) {
   if (token == null) return res.sendStatus(401);
   jwt.verify(token, process.env.EMAIL_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
-    console.log(user);
     req.user = user;
     next();
   });

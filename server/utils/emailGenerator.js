@@ -32,7 +32,6 @@ export function sendMail(reciever, token) {
       });
       resolve(mail);
     } catch (err) {
-      console.log(err);
       reject("Error code 1");
     }
   });

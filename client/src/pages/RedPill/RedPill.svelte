@@ -5,14 +5,12 @@
   let isApproved = false;
 
   async function isAuthorized() {
-    console.log("heelo");
     const response = await fetch(`${$BASE_URL}/api/redPill/page`, {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${getCookie("token")}`,
       },
     });
-    console.log(response);
     if (response.ok) {
       isApproved = true;
     }

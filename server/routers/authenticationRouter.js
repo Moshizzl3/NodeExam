@@ -9,7 +9,6 @@ router.post("/api/authenticate", async (req, res) => {
   const [rows, columns] = await db.execute("SELECT * FROM users WHERE mail=?", [
     req.body.mail,
   ]);
-  console.log(rows[0]);
   if (rows.length > 0) {
     if (await bcrypt.compare(req.body.password, rows[0].password)) {
       const user = {
