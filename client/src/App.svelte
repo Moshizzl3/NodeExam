@@ -6,22 +6,21 @@
   import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.svelte";
   import RedPill from "./pages/RedPill/RedPill.svelte";
   import BluePill from "./pages/BluePill/BluePill.svelte";
+  import PrivateRoute from "./components/PrivateRoute/PrivateRoute.svelte";
 
   const cookie = document.cookie;
 </script>
 
-<main class="container mainContainer h-100">
+<main class="container mainContainer">
   <Router>
-    {#if !cookie}
       <div>
         <Route path="/"><Login /></Route>
         <Route path="/signup"><SignUp /></Route>
         <Route path="/forgot-password"><ForgotPassword /></Route>
+        <Route path="/forgot-password/*"><ForgotPassword /></Route>
       </div>
-    {:else}
-      <Route path="/redpill"><RedPill /></Route>
-      <Route path="/bluepill"><BluePill /></Route>
-      <Route path="/"><Home /></Route>
-    {/if}
+      <PrivateRoute path="/redpill"><RedPill /></PrivateRoute>
+      <PrivateRoute path="/bluepill"><BluePill /></PrivateRoute>
+      <PrivateRoute path="/home"><Home /></PrivateRoute>
   </Router>
 </main>

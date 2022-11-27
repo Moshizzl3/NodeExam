@@ -2,6 +2,7 @@
   import Button from "../Button/Button.svelte";
   import Input from "../Input/Input.svelte";
   import UserMessage from "../UserMessage.svelte/UserMessage.svelte";
+  import toastr from "toastr";
 
   let name = "";
   let mail = "";
@@ -16,7 +17,11 @@
       body: JSON.stringify(user),
     });
     if (response.ok) {
-      window.location.replace("/");
+      toastr.success("you are now signed up, you will be redirected shortly");
+
+      setTimeout(() => {
+        window.location.replace("/");
+      }, 3000);
     } else {
       messageToUser = "didnt work";
     }

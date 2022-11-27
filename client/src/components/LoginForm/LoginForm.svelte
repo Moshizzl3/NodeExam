@@ -1,7 +1,8 @@
 <script>
   import Button from "../Button/Button.svelte";
   import Input from "../Input/Input.svelte";
-  import UserMessage from "../UserMessage.svelte/UserMessage.svelte";
+  import { BASE_URL } from "../../store/global";
+  import toastr from "toastr";
 
   let mail = "";
   let password = "";
@@ -9,20 +10,21 @@
   async function click() {
     const user = { mail: mail, password: password };
 
-    const response = await fetch("http://localhost:8080/api/users/login", {
+    const response = await fetch(`${$BASE_URL}/api/authenticate`, {
       method: "POST",
-      headers: { "Content-type": "application/json", authorization: "hi" },
+      headers: { "Content-type": "application/json" },
       body: JSON.stringify(user),
     });
-    const data = await response.json();
     if (response.ok) {
-      document.cookie = `token=${data}`;
-      window.location.replace("/")
+      const data = await response.json();
+      document.cookie = `token=${data.accesToken}`;
+      window.location.replace("/home");
       mail = "";
       password = "";
       messageToUser = "";
     } else {
-      messageToUser = "didnt work";
+      toastr.options.timeOut = 3000
+      toastr.error("Wrong email or password, please try again")
     }
   }
 </script>
@@ -60,5 +62,4 @@
   <Button backgroundColor="lightblue" clickFunc={click} id="login-button">
     Login
   </Button>
-  <UserMessage {messageToUser} />
 </form>

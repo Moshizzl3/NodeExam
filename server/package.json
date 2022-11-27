@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "PORT=8080 nodemon app.js",
-    "start-prod": "node app.js"
+    "start-prod": "node app.js",
+    "setup-db":"cd database && node ddl_mysql.js"
   },
   "keywords": [],
   "author": "",

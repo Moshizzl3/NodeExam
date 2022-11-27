@@ -91,8 +91,8 @@
     -webkit-animation-name: shimmer;
     -moz-animation-name: shimmer;
     animation-name: shimmer;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 15s;
+    -moz-animation-duration: 15s;
     animation-duration: 15s;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
